@@ -1,4 +1,4 @@
-<html>
+html>
     
 Pipeline 
 Chapter Sub-Sections
@@ -137,7 +137,7 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                // 
+               // 
             }
         }
         stage('Deploy') { 
@@ -172,61 +172,4 @@ node {
     }
     stage('Deploy') { 
         // 
-    }
-}
-Execute this Pipeline or any of its stages, on any available agent.
-Defines the "Build" stage. stage blocks are optional in Scripted Pipeline syntax. However, implementing stage blocks in a Scripted Pipeline provides clearer visualization of each `stage’s subset of tasks/steps in the Jenkins UI.
-Perform some steps related to the "Build" stage.
-Defines the "Test" stage.
-Perform some steps related to the "Test" stage.
-Defines the "Deploy" stage.
-Perform some steps related to the "Deploy" stage.
-Pipeline example
-Here is an example of a Jenkinsfile using Declarative Pipeline syntax - its Scripted syntax equivalent can be accessed by clicking the Toggle Scripted Pipeline link below:
-
-Jenkinsfile (Declarative Pipeline)
-pipeline { 
-    agent any 
-    options {
-        skipStagesAfterUnstable()
-    }
-    stages {
-        stage('Build') { 
-            steps { 
-                sh 'make' 
-            }
-        }
-        stage('Test'){
-            steps {
-                sh 'make check'
-                junit 'reports/**/*.xml' 
-            }
-        }
-        stage('Deploy') {
-            steps {
-                sh 'make publish'
-            }
-        }
-    }
-}
-Toggle Scripted Pipeline (Advanced)
-pipeline is Declarative Pipeline-specific syntax that defines a "block" containing all content and instructions for executing the entire Pipeline.
-agent is Declarative Pipeline-specific syntax that instructs Jenkins to allocate an executor (on a node) and workspace for the entire Pipeline.
-stage is a syntax block that describes a stage of this Pipeline. Read more about stage blocks in Declarative Pipeline syntax on the Pipeline syntax page. As mentioned above, stage blocks are optional in Scripted Pipeline syntax.
-steps is Declarative Pipeline-specific syntax that describes the steps to be run in this stage.
-sh is a Pipeline step (provided by the Pipeline: Nodes and Processes plugin) that executes the given shell command.
-junit is another Pipeline step (provided by the JUnit plugin) for aggregating test reports.
-sh is a Pipeline step (provided by the Pipeline: Nodes and Processes plugin) that executes the given shell command.
-Read more about Pipeline syntax on the Pipeline Syntax page.
-
-1. Domain-specific language
-2. Source control management
-3. Single source of truth
-4. Additional plugins have been used to implement complex behaviors utilizing Freestyle Jobs such as the Copy Artifact, Parameterized Trigger, and Promoted Builds plugins
-5. GitHub Organization Folder plugin
-6. Blue Ocean, Pipeline: Stage View plugin
-⇐ Using Jenkins
-Index
-Getting started with Pipeline ⇒
-    
-    <\html>
+ 
